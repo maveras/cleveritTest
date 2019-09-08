@@ -1,0 +1,9 @@
+@import "../../generalStyles.scss";
+
+.users-list {
+  width: 50%;
+  background: yellow;
+  border: solid 1px $color-gray;
+  height: 400px;
+  overflow: scroll;
+}

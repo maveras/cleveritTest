@@ -1,0 +1,13 @@
+@import "../../generalStyles.scss";
+
+.user-detail-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .user-detail-card {
+    background: $color-gray;
+    padding: 3rem;
+    color: $color-blue;
+  }
+}

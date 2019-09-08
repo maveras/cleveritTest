@@ -20,11 +20,16 @@ $color-blue: #325d79;
 }
 
 .btn {
-  border: solid 1px $color-green;
+  border: solid 1px $color-blue;
   padding: 0.5rem 1rem;
   color: white;
-  background: $color-green;
+  background: $color-blue;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 3px;
+  height: auto;
+  display: block;
+  text-align: center;
+  height: 33px;
   cursor: pointer;
+  margin: 0 1rem;
 }

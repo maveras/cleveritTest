@@ -1,8 +1,8 @@
 import React from "react";
 export const SearchBar = () => {
   return (
-    <div>
-      <input type="text" placeholder="search" />
+    <div className="input">
+      <input type="text" className="input__text" placeholder="search" />
     </div>
   );
 };

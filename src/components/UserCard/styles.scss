@@ -1,0 +1,16 @@
+@import "../../generalStyles.scss";
+
+.user-card {
+  background: white;
+  color: $color-blue;
+  border: 0.5px solid $color-gray;
+  padding: 1.2rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  &--active {
+    background: $color-blue;
+    color: white;
+    border-left: 4px solid $color-orange;
+  }
+}

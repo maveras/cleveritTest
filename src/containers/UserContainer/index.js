@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./styles.scss";
 import { UserControls } from "../../components/UserControls";
 import { UserList } from "../../components/UserList";
 import { UserDetails } from "../../components/UsersDetails";
@@ -26,15 +27,17 @@ export const UserContainer = () => {
     fetchdata();
   }, []);
   return (
-    <UsersProvider value={users}>
+    <UsersProvider value={{ users, userSelected }}>
       <div className="userContainer">
         <h1>Users list</h1>
         <UserControls fetchdata={fetchdata}></UserControls>
-        <UserList
-          handleSelectedUser={handleSelectedUser}
-          loading={loading}
-        ></UserList>
-        <UserDetails userSelected={userSelected}> </UserDetails>
+        <div className="users-main">
+          <UserList
+            handleSelectedUser={handleSelectedUser}
+            loading={loading}
+          ></UserList>
+          <UserDetails userSelected={userSelected}> </UserDetails>
+        </div>
       </div>
     </UsersProvider>
   );
