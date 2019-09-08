@@ -4,10 +4,15 @@ import { UserList } from "../../components/UserList";
 import { UserDetails } from "../../components/UsersDetails";
 import { UsersProvider } from "../../stores/UserContext.js";
 
-function useFetchUsers() {
+export const UserContainer = () => {
+  const [userSelected, setUserSelected] = useState({});
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
+
+  function handleSelectedUser(user) {
+    setUserSelected(user);
+  }
+  const fetchdata = () => {
     setLoading(true);
     window
       .fetch("http://jsonverserverclever.azurewebsites.net/User")
@@ -16,22 +21,15 @@ function useFetchUsers() {
         setUsers(response);
         setLoading(false);
       });
+  };
+  useEffect(() => {
+    fetchdata();
   }, []);
-  return { users, loading };
-}
-
-export const UserContainer = () => {
-  const [userSelected, setUserSelected] = useState({});
-  const { users, loading } = useFetchUsers();
-
-  function handleSelectedUser(user) {
-    setUserSelected(user);
-  }
   return (
     <UsersProvider value={users}>
       <div className="userContainer">
         <h1>Users list</h1>
-        <UserControls></UserControls>
+        <UserControls fetchdata={fetchdata}></UserControls>
         <UserList
           handleSelectedUser={handleSelectedUser}
           loading={loading}

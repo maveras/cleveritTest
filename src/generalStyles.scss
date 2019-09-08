@@ -1,0 +1,30 @@
+$color-orange: #f26627;
+$color-lorange: #f9a26c;
+$color-gray: #efeeee;
+$color-green: #9bd7d1;
+$color-blue: #325d79;
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  label {
+    margin-bottom: 0.5rem;
+  }
+  .input__text {
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0 0.3rem;
+    border-radius: 10px;
+    border: 1px solid $color-gray;
+  }
+}
+
+.btn {
+  border: solid 1px $color-green;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: $color-green;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
