@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import "./styles.scss";
 
@@ -6,6 +6,16 @@ export const Modal = ({ isShowing, hide, fetchUsers }) => {
   const [name, setName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    clearInputs();
+  }, [isShowing]);
+
+  const clearInputs = () => {
+    setName("");
+    setlastName("");
+    setEmail("");
+  };
   const handleFetch = () => {
     fetchUsers();
   };
@@ -39,6 +49,7 @@ export const Modal = ({ isShowing, hide, fetchUsers }) => {
       .then(response => {
         handleFetch();
         hide();
+        clearInputs();
       });
   };
   return isShowing

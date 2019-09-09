@@ -4,11 +4,11 @@ import { UserCard } from "../UserCard";
 import UserContext from "../../stores/UserContext";
 export const UserList = props => {
   const { handleSelectedUser } = props;
-  const { users, userSelected } = useContext(UserContext);
+  const { filteredUsers, userSelected } = useContext(UserContext);
 
   return (
     <div className="users-list">
-      {users.map(user => (
+      {filteredUsers.map(user => (
         <UserCard
           key={user.id}
           handleSelectedUser={handleSelectedUser}
