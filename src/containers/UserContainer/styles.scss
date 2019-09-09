@@ -1,6 +1,13 @@
 @import "../../generalStyles.scss";
-.users-main {
+.userContainer {
   padding: 2rem;
-  display: flex;
-  justify-content: space-evenly;
+  h1 {
+    margin-bottom: 1.5rem;
+    color: $color-blue;
+  }
+  .users-main {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }

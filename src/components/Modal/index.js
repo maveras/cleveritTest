@@ -16,6 +16,7 @@ export const Modal = ({ isShowing, hide, fetchUsers }) => {
     setlastName("");
     setEmail("");
   };
+  const enabled = name.length > 0 && lastName.length > 0 && email.length > 0;
   const handleFetch = () => {
     fetchUsers();
   };
@@ -87,7 +88,11 @@ export const Modal = ({ isShowing, hide, fetchUsers }) => {
               />
             </div>
             <div className="modal__actions">
-              <button className="btn" onClick={handleSendForm}>
+              <button
+                disabled={!enabled}
+                className={`btn ${!enabled ? "btn--disabled" : null}`}
+                onClick={handleSendForm}
+              >
                 Add User
               </button>
             </div>

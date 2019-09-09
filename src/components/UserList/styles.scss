@@ -2,8 +2,18 @@
 
 .users-list {
   width: 50%;
-  background: yellow;
   border: solid 1px $color-gray;
   height: 400px;
   overflow: scroll;
+  h2 {
+    color: $color-blue;
+  }
+  .users-list__loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $color-blue;
+    height: 100%;
+    align-content: center;
+  }
 }

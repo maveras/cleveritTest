@@ -25,8 +25,10 @@ export const UserContainer = () => {
       .fetch("http://jsonverserverclever.azurewebsites.net/User")
       .then(res => res.json())
       .then(response => {
-        setUsers(response);
-        setFilteredUsers(response);
+        // filter users whitout name
+        const users = response.filter(user => user.name);
+        setUsers(users);
+        setFilteredUsers(users);
         setLoading(false);
       });
   };

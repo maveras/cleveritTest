@@ -9,7 +9,7 @@ export const UserCard = props => {
       onClick={() => handleSelectedUser(user)}
       className={`user-card ${styleActive}`}
     >
-      <span>{user.name + user.lastName}</span>
+      <span>{`${user.name} ${user.lastName}`}</span>
     </div>
   );
 };

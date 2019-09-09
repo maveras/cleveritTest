@@ -7,6 +7,7 @@ $color-blue: #325d79;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  color: $color-blue;
   label {
     margin-bottom: 0.5rem;
   }
@@ -29,7 +30,11 @@ $color-blue: #325d79;
   height: auto;
   display: block;
   text-align: center;
-  height: 33px;
+  height: 35px;
   cursor: pointer;
   margin: 0 1rem;
+}
+.btn--disabled {
+  background: $color-blue + 70;
+  cursor: not-allowed;
 }
